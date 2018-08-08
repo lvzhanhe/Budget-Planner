@@ -1,3 +1,3 @@
-# Boilerplate Meteor Project
+# My Wallet
 
-This includes a basic react and auth setup.
+Money Tracker Web App
