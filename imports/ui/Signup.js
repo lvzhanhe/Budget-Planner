@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import { Accounts } from 'meteor/accounts-base';
+import { Budgets } from '../api/budgets';
 
 export default class Signup extends React.Component {
   constructor(props) {
@@ -26,6 +27,9 @@ export default class Signup extends React.Component {
         this.setState({error: ''});
       }
     });
+
+    Meteor.call('budgets.insert');
+
   }
   render() {
     return (

@@ -1,17 +1,54 @@
 .item {
-  background: $item-bg;
-  border: 1px solid $item-border;
-  margin-bottom: $space;
+  border-left: 4px solid transparent;
   padding: $space;
+  transition: background-color .3s ease, border-left .3s ease;
+  display: flex;
+  justify-content: space-between;
+}
+
+.item:hover {
+  background-color: $light-grey;
+  border-left: 4px solid $grey;
 }
 
 .item__message {
   color: $item-text-color;
+  margin: 0;
+  padding: 0 3px 3px 3px;
 }
 
-.item__status-message {
+.item__message__bottom {
+  font-style: italic;
+}
+
+.item-list {
+  background-color: white;
+  border: 1px solid $grey;
+  overflow-y: scroll;
+  width: 100%;
+}
+
+.item-list__header {
+  display: flex;
+  flex-direction: column;
+  padding: $space;
+}
+
+.empty-item {
   color: $item-text-color;
   font-style: italic;
   text-align: center;
   margin: 0;
+}
+
+.item-left {
+
+}
+
+.item-right {
+  justify-content: center;
+}
+
+.item-title {
+  padding-bottom: 0;
 }

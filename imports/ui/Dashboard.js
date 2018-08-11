@@ -1,9 +1,9 @@
 import React from 'react';
 
 import PrivateHeader from './PrivateHeader';
-import AddItem from './AddItem';
 import Overview from './Overview';
 import TransactionList from './TransactionList';
+import BudgetPlanner from './BudgetPlanner';
 
 export default () => {
   return (
@@ -11,11 +11,11 @@ export default () => {
       <PrivateHeader title="My Wallet"/>
       <div className="page-content">
         <div className="left-portion">
-          <AddItem/>
           <TransactionList/>
         </div>
         <div className="right-portion">
-          <Overview/>
+          <div><BudgetPlanner/></div>
+          <div className="overview-box"><Overview/></div>
         </div>
       </div>
     </div>

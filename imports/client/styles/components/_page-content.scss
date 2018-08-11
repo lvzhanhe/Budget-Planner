@@ -1,5 +1,19 @@
 .page-content {
+  display: flex;
   margin: 0 auto;
   max-width: $site-max-width;
-  padding: $space;
+  padding: $large-space $space;
+  height: $page-content-height;
+}
+
+.left-portion {
+  display: flex;
+  width: $left-portion-width;
+  padding-right: $large-space;
+}
+
+.right-portion {
+  width: $right-portion-width;
+  border: 1px solid $right-portion-border;
+  background: $right-portion-bg;
 }

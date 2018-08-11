@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 html {
@@ -30,7 +31,7 @@ a {
   color: black;
 }
 
-input[type=text], input[type=email], input[type=password] {
+input[type=text], input[type=number], select, input[type=email], input[type=password] {
   border: 1px solid $input-border;
   font-size: $base-font-size;
   margin-bottom: $space;

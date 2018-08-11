@@ -18,9 +18,18 @@ Meteor.methods({
     }
 
     new SimpleSchema({
+      title: {
+        type: String,
+        label: 'Title',
+        min: 1
+      }
+    }).validate({ title });
+
+    new SimpleSchema({
       amount: {
         type: String,
-        label: 'Amount'
+        label: 'Amount',
+        min: 1
       }
     }).validate({ amount });
 
@@ -30,7 +39,7 @@ Meteor.methods({
       detail,
       type,
       userId: this.userId,
-      createTime: moment(new Date().getTime()).format('MMMM Do YYYY')
+      createTime: moment(new Date().getTime()).format('MMM Do YY')
     });
   },
   'items.delete'(_id) {

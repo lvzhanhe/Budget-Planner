@@ -8,8 +8,8 @@ export default class AddItem extends React.Component {
     this.state = {
       title: '',
       amount: '',
-      type: '',
-      detail: '',
+      type: 'expenses',
+      detail: 'Food & Drink',
       isOpen: false,
       error: ''
     };
@@ -55,11 +55,13 @@ export default class AddItem extends React.Component {
         addOption = new Option(expenses, expenses);
         obj.options.add(addOption);
       });
+      this.setState({ detail: 'Food & Drink' });
     } else {
       incomeArray.map((income) => {
         addOption = new Option(income, income);
         obj.options.add(addOption);
       });
+      this.setState({ detail: 'Salary' });
     }
   }
 
@@ -71,8 +73,8 @@ export default class AddItem extends React.Component {
     this.setState({
       title: '',
       amount: '',
-      type: '',
-      detail: '',
+      type: 'expenses',
+      detail: 'Food & Drink',
       isOpen: false,
       error: ''
     });
@@ -80,7 +82,7 @@ export default class AddItem extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="item-list__header">
         <button className="button" onClick={() => this.setState({isOpen: true})}>+ Add Transaction</button>
         <Modal
           isOpen={this.state.isOpen}
@@ -100,16 +102,29 @@ export default class AddItem extends React.Component {
                 value={this.state.title}
                 onChange={this.handleTitleChange.bind(this)}/>
               <input
-                type="text"
-                placeholder="amount (input a number)"
+                type="number"
+                placeholder="Amount (input a number)"
                 ref="amount"
                 value={this.state.amount}
                 onChange={this.handleAmountChange.bind(this)}/>
-              <select value={this.state.type} onChange={this.handleTypeChange.bind(this)}>
-                <option value="expenses">Expenses</option>
-                <option value="income">Income</option>
-              </select>
-              <select ref='detail'></select>
+              <div className="select-box">
+                <select value={this.state.type} onChange={this.handleTypeChange.bind(this)} className="select-box__item">
+                  <option value="expenses">Expenses</option>
+                  <option value="income">Income</option>
+                </select>
+                <select ref='detail' onChange={this.handleDetailChange.bind(this)} className="select-box__item">
+                  <option value="Food & Drink">Food & Drink</option>
+                  <option value="Shopping">Shopping</option>
+                  <option value="Home">Home</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Travel">Travel</option>
+                  <option value="Education">Education</option>
+                  <option value="Healthcare">Healthcare</option>
+                  <option value="Beauty">Beauty</option>
+                  <option value="Work">Work</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
 
               <button className="button">Add Transaction</button>
               <button type="button" className="button button--secondary" onClick={this.handleModalClose.bind(this)}>Cancel</button>

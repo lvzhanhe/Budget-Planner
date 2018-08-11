@@ -20,10 +20,21 @@
   background-color: $boxed-view-bg;
   padding: 2.4rem;
   text-align: center;
-  width: 24rem;
+  width: 30rem;
 }
 
 .boxed-view__form {
   display: flex;
   flex-direction: column;
+}
+
+.select-box {
+  display: flex;
+  justify-content: space-around;
+}
+
+.select-box__item {
+  display: flex;
+  height: 2.5rem;
+  border-radius: 0
 }

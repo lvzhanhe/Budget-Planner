@@ -5,6 +5,7 @@ import FlipMove from 'react-flip-move';
 
 import { Items } from '../api/items';
 import TransactionItem from './TransactionItem';
+import AddItem from './AddItem';
 
 export default class TransactionList extends React.Component {
   constructor(props) {
@@ -31,9 +32,7 @@ export default class TransactionList extends React.Component {
   renderTransactionItems() {
     if (this.state.items.length === 0) {
       return (
-        <div className="item">
-          <p className="item__status-message">No Transaction Yet</p>
-        </div>
+          <p className="empty-item">Add a New Transaction to Start</p>
       );
     }
 
@@ -44,7 +43,8 @@ export default class TransactionList extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="item-list">
+        <AddItem/>
         <FlipMove maintainContainerHeight={true}>
           {this.renderTransactionItems()}
         </FlipMove>
